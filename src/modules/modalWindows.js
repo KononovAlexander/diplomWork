@@ -1,22 +1,4 @@
 const modalWindows = () => {
-    // const callBtns = document.querySelectorAll('.fancyboxModal'),
-    // overlay = document.querySelector('.modal-overlay'),
-    // modal = document.querySelector('#callback');
-
-    // modal.addEventListener('click', (event) => {
-    //     let target = event.target;
-    //     if(target.closest('.modal-close')  || target.matches('.modal-overlay')){
-    //         modal.style.display = 'none';
-    //         overlay.style.display = 'none'; 
-    //     }
-    // });
-  
-    // callBtns.forEach((item) => {
-    //     item.addEventListener('click', () => {
-    //         modal.style.display = 'block';
-    //         overlay.style.display = 'block';    
-    //     });
-    // });
 
     const body = document.querySelector('body'),
         overlay = document.querySelector('.modal-overlay'),
@@ -34,7 +16,6 @@ const modalWindows = () => {
         }
     });
    
-
 }
 
 export default modalWindows;

@@ -82,7 +82,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar modalWindows = function modalWindows() {\n  // const callBtns = document.querySelectorAll('.fancyboxModal'),\n  // overlay = document.querySelector('.modal-overlay'),\n  // modal = document.querySelector('#callback');\n  // modal.addEventListener('click', (event) => {\n  //     let target = event.target;\n  //     if(target.closest('.modal-close')  || target.matches('.modal-overlay')){\n  //         modal.style.display = 'none';\n  //         overlay.style.display = 'none'; \n  //     }\n  // });\n  // callBtns.forEach((item) => {\n  //     item.addEventListener('click', () => {\n  //         modal.style.display = 'block';\n  //         overlay.style.display = 'block';    \n  //     });\n  // });\n  var body = document.querySelector('body'),\n      overlay = document.querySelector('.modal-overlay'),\n      modal = document.querySelector('#callback');\n  body.addEventListener('click', function (event) {\n    var target = event.target;\n\n    if (target.closest('.fancyboxModal')) {\n      modal.style.display = 'block';\n      overlay.style.display = 'block';\n    } else if (target.closest('.modal-close') || target === overlay) {\n      modal.style.display = 'none';\n      overlay.style.display = 'none';\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modalWindows);\n\n//# sourceURL=webpack://kononov_diplom/./src/modules/modalWindows.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar modalWindows = function modalWindows() {\n  var body = document.querySelector('body'),\n      overlay = document.querySelector('.modal-overlay'),\n      modal = document.querySelector('#callback');\n  body.addEventListener('click', function (event) {\n    var target = event.target;\n\n    if (target.closest('.fancyboxModal')) {\n      modal.style.display = 'block';\n      overlay.style.display = 'block';\n    } else if (target.closest('.modal-close') || target === overlay) {\n      modal.style.display = 'none';\n      overlay.style.display = 'none';\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modalWindows);\n\n//# sourceURL=webpack://kononov_diplom/./src/modules/modalWindows.js?");
 
 /***/ }),
 
@@ -93,7 +93,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar pageScroll = function pageScroll() {\n  console.log('pageScroll: ', pageScroll);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (pageScroll);\n\n//# sourceURL=webpack://kononov_diplom/./src/modules/pageScroll.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar pageScroll = function pageScroll() {\n  var menu = document.querySelector('.top-menu'),\n      chevronUp = document.querySelector('.up');\n  menu.addEventListener('click', function (event) {\n    event.preventDefault();\n    var target = event.target;\n\n    if (target.closest('ul>li>a')) {\n      var link = target.getAttribute('href').substring(1);\n      var scrollTo = document.getElementById(link);\n      var elemPosition = scrollTo.getBoundingClientRect().top;\n      window.scrollBy({\n        top: elemPosition,\n        behavior: \"smooth\"\n      });\n    }\n  });\n  chevronUp.addEventListener('click', function () {\n    window.scrollBy({\n      top: -pageYOffset,\n      behavior: \"smooth\"\n    });\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (pageScroll);\n\n//# sourceURL=webpack://kononov_diplom/./src/modules/pageScroll.js?");
 
 /***/ }),
 
@@ -506,7 +506,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("6aeb6271e48f755cda0b")
+/******/ 		__webpack_require__.h = () => ("7c0f86b4ff95654c19ae")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
