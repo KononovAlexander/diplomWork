@@ -1,11 +1,10 @@
 const pageScroll = () => {
     const body = document.querySelector('body'),
-        menu = document.querySelector('.top-menu'),
         servPosition = document.querySelector('#services').getBoundingClientRect().top,
         chevronUp = document.querySelector('.up');
 
         chevronUp.style.display = 'none';
-        
+
     window.addEventListener('scroll', () => {
         if((servPosition - 20) > pageYOffset){
 
