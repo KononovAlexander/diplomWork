@@ -93,7 +93,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar pageScroll = function pageScroll() {\n  var menu = document.querySelector('.top-menu'),\n      chevronUp = document.querySelector('.up');\n  menu.addEventListener('click', function (event) {\n    event.preventDefault();\n    var target = event.target;\n\n    if (target.closest('ul>li>a')) {\n      var link = target.getAttribute('href').substring(1);\n      var scrollTo = document.getElementById(link);\n      var elemPosition = scrollTo.getBoundingClientRect().top;\n      window.scrollBy({\n        top: elemPosition,\n        behavior: \"smooth\"\n      });\n    }\n  });\n  chevronUp.addEventListener('click', function () {\n    window.scrollBy({\n      top: -pageYOffset,\n      behavior: \"smooth\"\n    });\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (pageScroll);\n\n//# sourceURL=webpack://kononov_diplom/./src/modules/pageScroll.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar pageScroll = function pageScroll() {\n  var body = document.querySelector('body'),\n      menu = document.querySelector('.top-menu'),\n      servPosition = document.querySelector('#services').getBoundingClientRect().top,\n      chevronUp = document.querySelector('.up');\n  chevronUp.style.display = 'none';\n  window.addEventListener('scroll', function () {\n    if (servPosition - 20 > pageYOffset) {\n      chevronUp.style.display = 'none';\n    } else if (servPosition - 20 < pageYOffset) {\n      chevronUp.style.display = 'block';\n    }\n  });\n  body.addEventListener('click', function (event) {\n    event.preventDefault();\n    var target = event.target;\n\n    if (target.closest('ul>li>a')) {\n      var link = target.getAttribute('href').substring(1);\n      var scrollTo = document.getElementById(link);\n      var elemPosition = scrollTo.getBoundingClientRect().top;\n      window.scrollBy({\n        top: elemPosition,\n        behavior: \"smooth\"\n      });\n    } else if (target === chevronUp) {\n      window.scrollBy({\n        top: -pageYOffset,\n        behavior: \"smooth\"\n      });\n      console.log('pageYOffset: ', pageYOffset);\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (pageScroll);\n\n//# sourceURL=webpack://kononov_diplom/./src/modules/pageScroll.js?");
 
 /***/ }),
 
@@ -506,7 +506,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("7c0f86b4ff95654c19ae")
+/******/ 		__webpack_require__.h = () => ("7ae646e47364362a4b1a")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

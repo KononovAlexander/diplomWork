@@ -1,31 +1,43 @@
 const pageScroll = () => {
-    const menu = document.querySelector('.top-menu'),
-    chevronUp = document.querySelector('.up');
+    const body = document.querySelector('body'),
+        menu = document.querySelector('.top-menu'),
+        servPosition = document.querySelector('#services').getBoundingClientRect().top,
+        chevronUp = document.querySelector('.up');
 
-    menu.addEventListener('click', (event) => {
+        chevronUp.style.display = 'none';
+        
+    window.addEventListener('scroll', () => {
+        if((servPosition - 20) > pageYOffset){
+
+            chevronUp.style.display = 'none';
+
+        }else if((servPosition - 20) < pageYOffset){
+
+            chevronUp.style.display = 'block';
+
+        }
+    });
+
+    body.addEventListener('click', (event) => {
         event.preventDefault();
         let target = event.target;
         if(target.closest('ul>li>a')){
 
-            
             let link = target.getAttribute('href').substring(1);
             const scrollTo = document.getElementById(link);
             const elemPosition = scrollTo.getBoundingClientRect().top;
-            
+
             window.scrollBy({
                 top: elemPosition,
                 behavior: "smooth"
             });
-
-            
+        }else if(target === chevronUp){
+            window.scrollBy({
+                top: -pageYOffset,
+                behavior: "smooth"
+            });
+            console.log('pageYOffset: ', pageYOffset);
         }
-    });
-
-    chevronUp.addEventListener('click', () => {
-        window.scrollBy({
-            top: -pageYOffset,
-            behavior: "smooth"
-        });
     });
 
 }
