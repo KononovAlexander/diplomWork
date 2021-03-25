@@ -3,9 +3,7 @@ const mainSlider = () => {
         slides = slider.querySelectorAll('.item'),
         text = slider.querySelectorAll('.table'),
         ul = document.createElement('ul');
-        console.log('text: ', text);
 
-        
         let currentSlide = 0,
             interval;
 
