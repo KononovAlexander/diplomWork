@@ -49,7 +49,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar accordeon = function accordeon() {\n  console.log('accordeon: ', accordeon);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (accordeon);\n\n//# sourceURL=webpack://kononov_diplom/./src/modules/accordeon.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar accordeon = function accordeon() {\n  var accordeon = document.querySelector('.accordeon'),\n      elems = accordeon.querySelectorAll('.element');\n  elems.forEach(function (elem) {\n    return elem.classList.remove('active');\n  });\n  elems.forEach(function (elem) {\n    return elem.querySelector('.element-content').style.display = 'none';\n  });\n  accordeon.addEventListener('click', function (event) {\n    var target = event.target;\n\n    if (target.closest('.element')) {\n      elems.forEach(function (elem) {\n        return elem !== target.parentNode ? elem.classList.remove('active') : elem.classList.toggle('active');\n      });\n    }\n\n    hideText();\n    showText(target.parentNode);\n  });\n\n  var showText = function showText(item) {\n    item.classList.contains('active') ? item.querySelector('.element-content').style.display = 'block' : item.querySelector('.element-content').style.display = 'none';\n  };\n\n  var hideText = function hideText() {\n    elems.forEach(function (elem) {\n      return elem.querySelector('.element-content').style.display = 'none';\n    });\n  };\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (accordeon);\n\n//# sourceURL=webpack://kononov_diplom/./src/modules/accordeon.js?");
 
 /***/ }),
 
@@ -506,7 +506,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("5fd1dedd07d51a330de7")
+/******/ 		__webpack_require__.h = () => ("8fbbfa82ca80ae2ded05")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
