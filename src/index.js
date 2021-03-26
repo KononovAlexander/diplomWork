@@ -6,6 +6,7 @@ import pageScroll from './modules/pageScroll';
 import sendForm from './modules/sendForm';
 import accordeon from './modules/accordeon';
 import carousel from './modules/carousel';
+import formValidate from './modules/formValidate';
 
 mainSlider();
 modalWindows();
@@ -13,3 +14,4 @@ pageScroll();
 sendForm();
 accordeon();
 carousel();
+formValidate();
