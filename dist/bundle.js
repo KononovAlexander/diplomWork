@@ -60,7 +60,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar carousel = function carousel() {\n  console.log('carousel: ', carousel);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (carousel);\n\n//# sourceURL=webpack://kononov_diplom/./src/modules/carousel.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar carousel = function carousel() {\n  var carousel = document.querySelector('.services-carousel'),\n      slider = document.querySelector('.services-elements'),\n      slides = carousel.querySelectorAll('.col-sm-6'),\n      arrows = document.querySelector('.services-arrow'),\n      slideCount = 3,\n      sliderWidth = window.getComputedStyle(slider).getPropertyValue('width').replace(/[px]/g, ''),\n      slideWidth = \"\".concat(+sliderWidth / 100 * slideCount * 10, \"px\");\n  var counter = slides.length,\n      scroll = 0,\n      step = +sliderWidth / 100 * slideCount * 10;\n  console.log('counter: ', counter);\n  scroll = (scroll - step - 45) * counter;\n  console.log('scroll: ', scroll);\n  slider.style.overflowX = 'hidden';\n  carousel.style.display = 'flex';\n  carousel.style.transition = '.3s';\n  slides.forEach(function (slide) {\n    slide.querySelector('.title-h5').style.width = slideWidth;\n    carousel.append(slide.cloneNode(true));\n    carousel.style.transform = \"translateX(\".concat(scroll, \"px)\");\n  });\n\n  var loop = function loop(index) {\n    if (index === 0) {\n      console.log('index: ', index);\n      slides.forEach(function (slide) {\n        return carousel.prepend(slide);\n      });\n      counter = slides.length; // slides.length\n      // console.log('slides.length: ', counter);\n    } else if (index === slides.length + slideCount) {\n      console.log('index: ', index);\n      carousel.append(slides[index - slideCount]);\n      console.log('index - slideCount: ', index - slideCount);\n      counter = slides.length - 1;\n    }\n  };\n\n  arrows.addEventListener('click', function (event) {\n    var target = event.target;\n\n    if (target.closest('.arrow-right')) {\n      scroll = scroll - step - 45;\n      carousel.style.transform = \"translateX(\".concat(scroll, \"px)\");\n      counter++;\n      console.log('counter: ', counter);\n      loop(counter);\n    } else if (target.closest('.arrow-left')) {\n      scroll = scroll + step + 45;\n      carousel.style.transform = \"translateX(\".concat(scroll, \"px)\");\n      counter--;\n      console.log('counter: ', counter);\n      loop(counter);\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (carousel);\n\n//# sourceURL=webpack://kononov_diplom/./src/modules/carousel.js?");
 
 /***/ }),
 
@@ -517,7 +517,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("21628ca1fd28e5bae52d")
+/******/ 		__webpack_require__.h = () => ("ebcf76e7198ff929b0f8")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
