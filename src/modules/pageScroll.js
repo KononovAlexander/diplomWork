@@ -35,7 +35,7 @@ const pageScroll = () => {
                 top: -pageYOffset,
                 behavior: "smooth"
             });
-            console.log('pageYOffset: ', pageYOffset);
+
         }
     });
 
