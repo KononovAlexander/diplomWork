@@ -71,7 +71,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar formValidate = function formValidate() {\n  var inputs = document.querySelectorAll('input');\n  inputs.forEach(function (input) {\n    input.addEventListener('input', function (event) {\n      var target = event.target;\n\n      if (target.matches('input[name=\"fio\"]')) {\n        target.value = target.value.replace(/[~_&a-zA-Z0-9=+()*?:;№\"!%$#@^<>/\"']/g, '');\n      } else if (target.matches('input[name=\"tel\"]')) {\n        target.value = target.value.replace(/[-$%&*()~``|\\=?/{}^#@\"'<>!.:;,A-Za-zа-яА-ЯЁё]/g, '');\n        var num = target.value.split();\n\n        if (num[0] === '+7') {\n          target.setAttribute('maxlength', 12);\n        } else if (num[0] === '8') {\n          target.setAttribute('maxlength', 11);\n        }\n      }\n    });\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (formValidate);\n\n//# sourceURL=webpack://kononov_diplom/./src/modules/formValidate.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar formValidate = function formValidate() {\n  var inputs = document.querySelectorAll('input');\n  var deleteElem = document.querySelector('input[readonly=\"readonly\"]');\n  deleteElem.remove();\n  inputs.forEach(function (input) {\n    input.addEventListener('input', function (event) {\n      var target = event.target;\n\n      if (target.matches('input[name=\"fio\"]')) {\n        target.value = target.value.replace(/[~_&a-zA-Z0-9=+()*?:;№\"!%$#@^<>/\"']/g, '');\n      } else if (target.matches('input[name=\"tel\"]')) {\n        target.value = target.value.replace(/[-$%&*()~``|\\=?/{}^#@\"'<>!.:;,A-Za-zа-яА-ЯЁё]/g, '');\n        var num = target.value.split();\n\n        if (num[0] === '+7') {\n          target.setAttribute('maxlength', 12);\n        } else if (num[0] === '8') {\n          target.setAttribute('maxlength', 11);\n        }\n      }\n    });\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (formValidate);\n\n//# sourceURL=webpack://kononov_diplom/./src/modules/formValidate.js?");
 
 /***/ }),
 
@@ -517,7 +517,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("0bf2f565eb0cad4a0008")
+/******/ 		__webpack_require__.h = () => ("e03f3e6ffeeda84d8cf7")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

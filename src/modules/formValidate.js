@@ -1,6 +1,8 @@
 const formValidate = () => {
 
     const inputs = document.querySelectorAll('input');
+    const deleteElem = document.querySelector('input[readonly="readonly"]');
+    deleteElem.remove();
 
     inputs.forEach((input) => {
         input.addEventListener('input', (event) => {
