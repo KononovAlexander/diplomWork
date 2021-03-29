@@ -1,7 +1,6 @@
 const sendForm = () => {
 
 const forms = document.querySelectorAll('form'),
-    inputs = document.querySelectorAll('input[type="submit"]'),
     responseMessage = document.getElementById('responseMessage'),
     btnsClose = document.querySelector('.fancyClose'),
     
@@ -46,32 +45,27 @@ const postData = (body, item) => {
     
 };
 
-forms.forEach((form) => {
-    form.addEventListener('click', (event) => {
-        // event.preventDefault();
-        let target = event.target;
-        if(target.matches('input[type="submit"]')){
+    forms.forEach((form) => {
+        form.addEventListener('click', (event) => {
+            let target = event.target;
+            if(target.matches('input[type="submit"]')){
 
-            const formData = new FormData(form);
-            let body = {};
-            
-            formData.forEach((val, key) => {
-                body[key] = val;
-            });
-            postData(body, form);
-            responseMessage.style.display = 'block';
-            
-        }
+                const formData = new FormData(form);
+                let body = {};
+
+                formData.forEach((val, key) => {
+                    body[key] = val;
+                });
+                postData(body, form);
+                responseMessage.style.display = 'block';
+            }
+        });
     });
-});
 
-const hideModal = (elem) => {
-    let link = elem.getAttribute('name').split('-').pop();
-    document.getElementById(link).style.display = 'none';
-    
-}
-
-
+    const hideModal = (elem) => {
+        let link = elem.getAttribute('name').split('-').pop();
+        document.getElementById(link).style.display = 'none';
+    }
 
 }
 

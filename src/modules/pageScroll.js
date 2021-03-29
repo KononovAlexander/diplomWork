@@ -18,7 +18,6 @@ const pageScroll = () => {
     });
 
     body.addEventListener('click', (event) => {
-        // event.preventDefault();
         let target = event.target;
         if(target.closest('ul>li>a')){
 

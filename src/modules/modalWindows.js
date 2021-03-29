@@ -27,15 +27,16 @@ const modalWindows = () => {
             const modal = document.getElementById(link);
 
             betterModal(modal);
-
             toggleModal(modal);
             toggleModal(overlay);
         }else if(target.closest('.modal-close') || target === overlay){     
             let elems = document.querySelectorAll('.modal-callback');
 
-            elems.forEach(elem => getComputedStyle(elem).display === 'block' ? toggleModal(elem) :
-            console.log(1));      
-            toggleModal(overlay);
+            elems.forEach((elem) => {
+                if(getComputedStyle(elem).display === 'block') {
+                    toggleModal(elem)} 
+                });      
+                toggleModal(overlay);
         }
     });
    
